@@ -2,14 +2,15 @@ import React from 'react'
 import "./Videofooter.css"
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import Ticker from "react-ticker"
+import record from "./record.png"
 
-function VideoFooter() {
+function VideoFooter(props) {
     return (
         <div className="videoFooter">
             <div className="videoFooter__text">
-                <h3>@divyanshbarar</h3>
+                <h3>@{props.name}</h3>
                 <p>
-                    this is f-ing description
+                    {props.description}
                 </p>
                 <div className="videoFooter__ticker">
                     <MusicNoteIcon className="videoFooter__icon" />
@@ -17,7 +18,7 @@ function VideoFooter() {
                         {
                             ({ index }) => (
                                 <>
-                                    <p>I am a song</p>
+                                    <p>{props.song}</p>
                                 </>
                             )
                         }
@@ -25,7 +26,7 @@ function VideoFooter() {
                 </div>
 
             </div>
-            <img src="https://assets.stickpng.com/thumbs/5856b3da4f6ae202fedf2794.png" alt="" className="videoFooter__record" />
+            <img src={record} alt="" className="videoFooter__record" />
         </div>
     )
 }
